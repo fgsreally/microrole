@@ -1,0 +1,47 @@
+{
+  "name": "microrole",
+  "private": true,
+  "version": "0.0.0",
+  "main": "dist/core/index.js",
+  "module": "dist/core/index.mjs",
+  "types": "dist/core/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/core/index.mjs",
+      "require": "./dist/core/index.js"
+    },
+    "./helper": {
+      "import": "./dist/helper/puppeteer.mjs",
+      "require": "./dist/helper/puppeteer.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "watch": "tsup --watch",
+    "example2:dev": "npm -C examples/example1 run dev",
+    "example2:build": "npm -C examples/example1 run build",
+    "lint": "eslint .",
+    "test": "vitest",
+    "test:update": "vitest --u",
+    "e2e": " cypress open"
+  },
+  "dependencies": {
+    "colors": "^1.4.0",
+    "puppeteer": "^15.3.0"
+  },
+  "devDependencies": {
+    "@cypress/vite-dev-server": "^3.0.0",
+    "@cypress/vue": "^3.1.2",
+    "@vitejs/plugin-vue": "^2.3.3",
+    "cypress": "^10.2.0",
+    "cypress-localstorage-commands": "^2.1.0",
+    "tsup": "^6.1.2",
+    "typescript": "^4.7.4",
+    "vite": "^2.9.12",
+    "vue": "^3.2.25",
+    "vue-tsc": "^0.34.17"
+  }
+}
